@@ -3,6 +3,32 @@
 int number = 9;
 int heap[9] = {7, 6, 5, 8, 3, 5, 9, 1, 6};
 
+void print_heap() {
+    int line = 1;
+    int count = 0;
+    
+    printf("\n");
+
+    for (int i = 1; i < number; i++) {
+
+            for (int j = 0; j < number / line; j++) {
+                printf("   ");
+            }
+        printf("(%d) %d", i, heap[i - 1]);
+        count++;
+        if (line == count) {
+            printf ("\n");
+            for (int j = 0; j < number / line; j++) {
+                printf("   ");
+            }
+            printf("\n");
+            line *= 2;
+            count = 0;
+        } 
+    }
+    printf("\n");
+}
+
 int main(void) {
     // 전체 트리 구조를 최대 힙 구조로 변환
     for (int i = 1; i < number; i++) {
@@ -16,6 +42,7 @@ int main(void) {
             }
             c = root;
         } while (c != 0);
+        print_heap();
     }
         // 크기를 줄여가며 반복적으로 힙을 구성
         for (int i = number - 1; i >= 0; i--)
