@@ -39,6 +39,8 @@
     "stdexcept": "cpp",
     "streambuf": "cpp",
     "typeinfo": "cpp",
-    "xutility": "cpp"
+    "xutility": "cpp",
+    "pthread.h": "c",
+    "stdio.h": "c"
   }
 }

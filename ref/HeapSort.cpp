@@ -9,12 +9,12 @@ void print_heap() {
     
     printf("\n");
 
-    for (int i = 1; i < number; i++) {
+    for (int i = 0; i < number; i++) {
 
             for (int j = 0; j < number / line; j++) {
                 printf("   ");
             }
-        printf("(%d) %d", i, heap[i - 1]);
+        printf("(%d) %d", i, heap[i]);
         count++;
         if (line == count) {
             printf ("\n");
@@ -43,7 +43,10 @@ int main(void) {
             c = root;
         } while (c != 0);
         print_heap();
+        printf ("\n---------------------------------------------------------------------------\n");
     }
+            printf ("최대힙 완성\n");
+
         // 크기를 줄여가며 반복적으로 힙을 구성
         for (int i = number - 1; i >= 0; i--)
         {
@@ -54,6 +57,7 @@ int main(void) {
             int c = 1;
             do {
                 c = 2 * root + 1;
+                printf ("\n root : 인덱스 %d, 조사할 자식은 %d %d\n", root, c, c + 1);
                 // 자식 중에 더 큰 값을 찾기
                 if (heap[c] < heap[c + 1] && c < i - 1)
                     c++;
@@ -66,6 +70,10 @@ int main(void) {
                 }
                 root = c;
             } while (c < i);
+            
+             print_heap();
+        printf ("\n---------------------------------------------------------------------------\n");
+
         } 
 
 
