@@ -79,7 +79,27 @@ for (const char of str) {
 }
 
 // 자르는 함수(substr, slice, substring...)는 원본 문자열을 변경하지 않는다.
+// splice만이 원본 문자열을 변형시킨다.
+
 let origin = "helloworld";
 
 let temp = str.replace("hello", "");
 console.log(temp, origin);
+
+// 객체의 속성값
+
+// 이 때 객체.id로 검색하는 게 아니라 정말 그대로 객체.a 라는 속성값을 가리키게 된다.
+// {a : "123123"};
+// a에 담은 id라는 값을 객체의 속성 값으로 지정하고 싶으면 객체[a]라고 해주어야 한다.
+// {id : "123123"}
+// const a = "id";
+// 객체.a = "123123"const a = "id";
+
+const arrA = {};
+const arrB = {};
+
+arrA.a = 123123;
+arrB[a] = 123123;
+
+console.log(arrA);
+console.log(arrB);

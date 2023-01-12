@@ -30,7 +30,7 @@
 
 function solution(record) {
   // 해시 응용
-  const userList = [];
+  const userList = {};
 
   const parsed = record.filter((item) => {
     const splited = item.split(" ");
