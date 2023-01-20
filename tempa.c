@@ -5,17 +5,18 @@ void reverse(int num)
     if (num < 10)
     {
         printf("%d\n", num);
-        return;
+        return ;
     }
     printf("%d", num % 10);
     reverse(num / 10);
     
 }
 
-void main(void)
+int main(void)
 {
     int n;
     scanf("%d", &n);
     reverse(n);
-}
 
+    return 0;
+}
