@@ -41,19 +41,25 @@
 
 function solution(bridge_length, weight, truck_weights) {
   let answer = 0;
-  const bridge = new Array(truck_weights.length).fill(0);
+  const bridge = new Array(bridge_length).fill(0);
+  // 현재 다리의 상태
   let bridgeSum = 0;
   while (bridge.length) {
     answer++;
+    // 앞에서부터 원소가 사라지고 뒤에서 트럭이 채워진다.
     bridge.shift();
     if (bridge.length) bridgeSum = bridge.reduce((cur, acc) => cur + acc);
     else bridgeSum = 0;
+
+    // 건너야 할 트럭이 있을 경우 무조건 뒤에 무언가를 채워넣어주고 뒤따라 오는 트럭과의 간격을 구현한다.
     if (truck_weights.length)
       if (bridgeSum + truck_weights[0] <= weight)
+        // 무게 한도를 넘치지 않을 경우 트럭이 뒤에 채워진다.
         bridge.push(truck_weights.shift());
+      // 무게 한도를 초과할 경우 0이 채워지는데, 이는 이후 트럭과의 간격을 의미하게 된다.
       else bridge.push(0);
   }
   return answer;
 }
 
-console.log(solution(4, 8, [2, 2, 2, 2, 2, 2, 2, 2, 2, 2]));
+console.log(solution(10, 20, [1, 5, 4, 2]));
