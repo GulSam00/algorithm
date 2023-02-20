@@ -13,7 +13,7 @@ void bfs(int start) {
     q.push(start);
     c[start] = true;
     while (!q.empty()) {
-        int x = q .front();
+        int x = q.front();
         q.pop();
         // cout << x << ' ';
         for (int i = 0; i < a[x].size(); i++) {
