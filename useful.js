@@ -2,12 +2,15 @@
 console.log([..."123"]);
 
 // 정렬 알고리즘
-// 오름차순
+// 오름차순 12345
+
+const score = [4, 2, 1, 3];
+
 score.sort(function (a, b) {
   return a - b;
 });
 
-// 내림차순
+// 내림차순 54321
 score.sort(function (a, b) {
   return b - a;
 });
@@ -97,9 +100,17 @@ console.log(temp, origin);
 
 const arrA = {};
 const arrB = {};
+const a = "id";
 
 arrA.a = 123123;
 arrB[a] = 123123;
 
-console.log(arrA);
-console.log(arrB);
+// 2차원 배열 만들기
+
+const tempArr1 = Array(3)
+  .fill()
+  .map(() => Array(3).fill(0));
+const tempArr2 = Array.from(new Array(3), () => new Array(3).fill(0));
+
+console.log(tempArr1);
+console.log(tempArr2);
