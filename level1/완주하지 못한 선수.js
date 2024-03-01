@@ -49,6 +49,8 @@ function solution(participant, completion) {
   return "nothing";
 }
 
+console.log(solution(["leo", "eden", "user", "dasd"], ["eden", "kiki"]));
+
 // sort를 이용한 풀이
 // function solution(participant, completion) {
 
