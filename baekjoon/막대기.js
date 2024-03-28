@@ -1,4 +1,5 @@
-let input = require("fs").readFileSync("input.txt").toString().split("\n");
+const fs = require("fs");
+let input = fs.readFileSync("input.txt").toString().trim().split("\n");
 
 const length = input.length;
 
